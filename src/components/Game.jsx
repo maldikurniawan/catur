@@ -1,6 +1,5 @@
 import React from 'react';
-import Board from './board';
-import Scoreboard from './ScoreBoard';
+import Board from './Board';
 import Knight from '../models/knight';
 import Bishop from '../models/bishop';
 import King from '../models/king';
@@ -131,21 +130,21 @@ export default class Game extends React.Component {
     // If user clicked on a square with a piece that belongs to them, mark it selected
     if (this.validateSelectedSquare(squareClicked)) {
       return this.selectSquare(squareClicked);
-    // Make move if piece is already selected and valid move
+      // Make move if piece is already selected and valid move
     } else if (selectedSquare && this.validateMove(selectedSquare, squareClicked)) {
       return this.movePiece(selectedSquare, squareClicked);
-    // Check if user was trying to castle
+      // Check if user was trying to castle
     } else if (selectedSquare && this.canCastle(selectedSquare, squareClicked)) {
       return this.movePiece(selectedSquare, squareClicked, { castle: true });
-    // Check if user was trying to en passant
+      // Check if user was trying to en passant
     } else if (selectedSquare && this.canEnPassant(selectedSquare, squareClicked)) {
       return this.movePiece(selectedSquare, squareClicked, { enpassant: true });
-    // If piece was selected then the move was invalid
+      // If piece was selected then the move was invalid
     } else if (selectedSquare) {
       return this.setState(oldState => ({
         message: 'You cannot move there.'
       }));
-    // Else user wasn't allowed to click the square
+      // Else user wasn't allowed to click the square
     } else {
       return this.setState(oldState => ({
         message: `Please select one of the ${this.state.current.color} pieces to move.`
@@ -460,9 +459,8 @@ export default class Game extends React.Component {
 
   render() {
     return (
-      <main className="container vw-100 vh-100">
-        <Scoreboard players={this.state.players} current={this.state.current} moves={this.state.history.moves} whiteGraveyard={this.state.whiteGraveyard} blackGraveyard={this.state.blackGraveyard} />
-        <Board squares={this.state.squares} checkmate={this.state.checkmate} message={this.state.message} selectedSquare={this.state.selectedSquare} lastMove={this.state.history.lastMove()} onClick={(index) => this.handleClick(index) }/>
+      <main className="container min-h-screen">
+        <Board squares={this.state.squares} checkmate={this.state.checkmate} selectedSquare={this.state.selectedSquare} lastMove={this.state.history.lastMove()} onClick={(index) => this.handleClick(index)} />
       </main>
     );
   }

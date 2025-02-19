@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerCard from './PlayerCard';
+import PlayerCard from "./playercard";
 
 export default class Scoreboard extends React.Component {
   displayMoveList(moves) {

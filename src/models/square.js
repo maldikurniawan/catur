@@ -9,9 +9,9 @@ export default class Square {
 
   defaultBgColor() {
     if (this.row % 2 === 0) {
-      return this.column % 2 === 0 ? 'bg-dark' : 'bg-light';
+      return this.column % 2 === 0 ? 'bg-[#F0D9B5]' : 'bg-[#B58863]';
     } else {
-      return this.column % 2 === 0 ? 'bg-light' : 'bg-dark';
+      return this.column % 2 === 0 ? 'bg-[#B58863]' : 'bg-[#F0D9B5]';
     }
   }
 

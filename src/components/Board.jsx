@@ -6,7 +6,7 @@ export default class Board extends React.Component {
     let cssClasses = square.bgColor;
 
     if (this.props.lastMove?.move_from === square.index || this.props.lastMove?.move_to === square.index) {
-      cssClasses = 'bg-orange';
+      cssClasses = 'bg-[#ffa500]';
     } else if (this.props.selectedSquare?.piece === square.piece) {
       cssClasses += ' border-blue';
     }
@@ -34,11 +34,11 @@ export default class Board extends React.Component {
     let restart;
 
     if (this.props.checkmate) {
-      restart = <a href="/">Play again?</a>;
+      restart = <a href="/" className='text-black'>Play again?</a>;
     }
 
     return (
-      <div className="board my-2">
+      <div className='board'>
         {displayedBoard}
         <p>{this.props.message}</p>
         {restart}

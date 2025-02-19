@@ -12,7 +12,7 @@ export default class PlayerCard extends React.Component {
       <div className="player-card bg-white d-flex flex-column justify-content-between p-1 m-2">
         <div className="d-flex justify-content-between">
           <h2 className="m-0 capitalize">{this.props.player.color}</h2>
-          <span className={`bg-grey p-1 white badge ${this.props.current === this.props.player ? 'bg-blue' : 'bg-grey' }`}>Your turn</span>
+          <span className={`bg-[#808080] p-1 white badge ${this.props.current === this.props.player ? 'bg-[#0000ff]' : 'bg-[#808080]' }`}>Your turn</span>
         </div>
 
         <div className="graveyard d-flex">
