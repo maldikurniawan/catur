@@ -465,7 +465,13 @@ export default class Game extends React.Component {
   render() {
     return (
       <main className="container flex justify-center items-center">
-        <Board squares={this.state.squares} checkmate={this.state.checkmate} selectedSquare={this.state.selectedSquare} lastMove={this.state.history.lastMove()} onClick={(index) => this.handleClick(index)} />
+        <Board
+          squares={this.state.squares}
+          checkmate={this.state.checkmate}
+          selectedSquare={this.state.selectedSquare}
+          lastMove={this.state.history.lastMove()}
+          onClick={(index) => this.handleClick(index)}
+        />
         {/* Modal untuk Checkmate */}
         {this.state.showModal && (
           <div className="fixed inset-0 flex items-center justify-center bg-black/50">
