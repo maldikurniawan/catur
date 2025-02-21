@@ -5,10 +5,12 @@ export default class Board extends React.Component {
   renderSquare(square) {
     let cssClasses = square.bgColor;
 
-    if (this.props.lastMove?.move_from === square.index || this.props.lastMove?.move_to === square.index) {
-      cssClasses = 'bg-[#ffa500]';
+    if (this.props.lastMove?.move_from === square.index) {
+      cssClasses = 'bg-[#AAA23A90]';
+    } else if (this.props.lastMove?.move_to === square.index) {
+      cssClasses = 'bg-[#AAA23A]';
     } else if (this.props.selectedSquare?.piece === square.piece) {
-      cssClasses += ' border-blue';
+      cssClasses += ' border-piece';
     }
 
     if (this.props.checkmate) {

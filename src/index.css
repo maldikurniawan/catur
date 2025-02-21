@@ -13,78 +13,9 @@ body,
     color: #ffffff;
 }
 
-.border-yellow {
-    border: 2px solid #ffff00 !important;
+.border-piece {
+    border: 2px solid #AAA23A !important;
 }
-
-.border-blue {
-    border: 2px solid #0000ff !important;
-}
-
-.badge {
-    display: inline-block;
-    border-radius: 6px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.font-md {
-    font-size: 16px;
-}
-
-.capitalize {
-    text-transform: capitalize;
-}
-
-/* Flex */
-.d-flex {
-    display: flex;
-}
-
-.justify-content-between {
-    justify-content: space-between;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-
-.justify-content-end {
-    justify-content: flex-end;
-}
-
-.justify-self-end {
-    justify-self: end;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.align-items-start {
-    align-items: start;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.flex-grow-1 {
-    flex-grow: 1;
-}
-
-/* Grid */
-.d-grid {
-    display: grid;
-}
-
-.nav-grid {
-    grid-template-columns: 225px auto 225px;
-}
-
-
 
 .sr-only {
     position: absolute;
@@ -98,30 +29,14 @@ a:hover {
     border: 0;
 }
 
-.d-none {
-    display: none;
-}
-
-.d-inline-block {
-    display: inline-block;
-}
-
 /* Components */
 main.container {
     display: grid;
 }
 
-header {
-    font-size: calc(10px + 2vmin);
-}
-
 .board {
     width: 400px;
     height: 400px;
-}
-
-.scoreboard {
-    background-color: #fcde8b;
 }
 
 .square {
@@ -136,41 +51,4 @@ header {
 .square img {
     width: 50px;
     height: 50px;
-}
-
-.player-card {
-    min-height: 100px;
-    border: 2px solid black;
-    border-radius: 4px;
-}
-
-.move-history {
-    min-height: 100px;
-    border: 2px solid black;
-    border-radius: 4px;
-    max-height: 350px;
-}
-
-.move-description {
-    display: block;
-    min-width: 100px;
-}
-
-.move-description>span {
-    width: 50px;
-    display: inline-block;
-}
-
-.move-description>span:first-child {
-    margin-left: 15px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
-
-.graveyard {
-    flex-flow: wrap;
-}
-
-.scrollable {
-    overflow-y: scroll;
 }
