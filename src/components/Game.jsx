@@ -27,7 +27,9 @@ export default class Game extends React.Component {
       blackGraveyard: [],
       history: new History(),
       check: false,
-      checkmate: false
+      checkmate: false,
+      showModal: false,
+      modalMessage: '',
     };
   }
 
@@ -220,7 +222,10 @@ export default class Game extends React.Component {
     let message = `${nextPlayer.color}'s turn. Please select a piece to move.`;
 
     if (checkmate) {
-      message = `Checkmate! Congrats to ${current.color}. You won!`
+      this.setState({
+        showModal: true,
+        modalMessage: `Congrats to ${current.color}. You won!`,
+      });
     }
 
     // Updating game record
@@ -461,6 +466,29 @@ export default class Game extends React.Component {
     return (
       <main className="container flex justify-center items-center">
         <Board squares={this.state.squares} checkmate={this.state.checkmate} selectedSquare={this.state.selectedSquare} lastMove={this.state.history.lastMove()} onClick={(index) => this.handleClick(index)} />
+        {/* Modal untuk Checkmate */}
+        {this.state.showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+            <div className="bg-white p-4 rounded-lg shadow-lg text-center">
+              <h2 className="text-xl font-bold">Checkmate!</h2>
+              <p className="mt-2">{this.state.modalMessage}</p>
+              <div className='flex justify-center gap-2'>
+                <a
+                  href='/'
+                  className="mt-4 bg-blue-500 text-white w-full px-4 py-2 rounded"
+                >
+                  Retry?
+                </a>
+                <button
+                  className="mt-4 bg-red-500 text-white w-full px-4 py-2 rounded"
+                  onClick={() => this.setState({ showModal: false })}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     );
   }

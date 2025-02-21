@@ -36,11 +36,11 @@ export default class Board extends React.Component {
     let restart;
 
     if (this.props.checkmate) {
-      restart = <a href="/" className='text-black'>Play again?</a>;
+      restart = <a href="/" className='text-white bg-[#1F1F1F] font-bold text-center items-center flex justify-center'>Play again?</a>;
     }
 
     return (
-      <div className='board'>
+      <div className='border-2'>
         {displayedBoard}
         <p>{this.props.message}</p>
         {restart}
