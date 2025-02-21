@@ -17,11 +17,8 @@ function App() {
 
   return (
     <AppContext.Provider value={providerState} >
-      <div className="App">
+      <div className="App min-h-screen">
         <Board />
-        <Control>
-          <MovesList />
-        </Control>
       </div>
     </AppContext.Provider>
   );
