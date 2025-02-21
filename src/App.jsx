@@ -1,12 +1,30 @@
-import Game from "./components/Game";
+import Board from './components/Board/Board';
+import { reducer } from './reducer/reducer'
+import { useReducer } from 'react'
+import { initGameState } from './constants';
+import AppContext from './contexts/Context'
+import Control from './components/Control/Control';
+import MovesList from './components/Control/bits/MovesList';
 
-export default function App() {
+function App() {
+
+  const [appState, dispatch] = useReducer(reducer, initGameState);
+
+  const providerState = {
+    appState,
+    dispatch
+  }
+
   return (
-    <div className="min-h-screen flex justify-center">
-      <div
-        className="absolute -z-10 inset-0 h-full w-full bg-[#1F1F1F] bg-[linear-gradient(to_right,#FFFFFF10_1px,transparent_1px),linear-gradient(to_bottom,#FFFFFF10_1px,transparent_1px)] bg-[size:24px_24px]"
-      ></div>
-      <Game />
-    </div>
-  )
+    <AppContext.Provider value={providerState} >
+      <div className="App">
+        <Board />
+        <Control>
+          <MovesList />
+        </Control>
+      </div>
+    </AppContext.Provider>
+  );
 }
+
+export default App;
