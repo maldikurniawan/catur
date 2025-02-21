@@ -17,7 +17,7 @@ function App() {
 
   return (
     <AppContext.Provider value={providerState} >
-      <div className="App min-h-screen">
+      <div className="App max-h-screen">
         <Board />
       </div>
     </AppContext.Provider>
