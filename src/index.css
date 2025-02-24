@@ -35,8 +35,8 @@ main.container {
 }
 
 .square {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     display: inline-block;
     text-align: center;
     vertical-align: bottom;
@@ -44,6 +44,6 @@ main.container {
 }
 
 .square img {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
 }
