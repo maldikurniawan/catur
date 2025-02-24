@@ -2,6 +2,20 @@ import Square from './Square';
 import React from 'react';
 
 export default class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      flipped: false,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    // Jika terjadi pergerakan, flip board
+    if (prevProps.lastMove !== this.props.lastMove) {
+      this.setState({ flipped: !this.state.flipped });
+    }
+  }
+
   renderSquare(square) {
     let cssClasses = square.bgColor;
 
@@ -24,27 +38,34 @@ export default class Board extends React.Component {
     let displayedBoard = [];
     let index = 0;
 
-    for (var x = 0; x < 8; x++) {
+    for (let x = 0; x < 8; x++) {
       let boardRow = [];
-      for (var y = 0; y < 8; y++) {
+      for (let y = 0; y < 8; y++) {
         boardRow.push(this.renderSquare(this.props.squares[index]));
         index += 1;
       }
-      displayedBoard.push(<div className="row" key={x}>{boardRow}</div>);
+      displayedBoard.push(
+        <div className="row" key={x}>
+          {this.state.flipped ? boardRow.reverse() : boardRow}
+        </div>
+      );
+    }
+
+    if (this.state.flipped) {
+      displayedBoard.reverse(); // Membalik urutan baris saat papan terbalik
     }
 
     let restart;
-
     if (this.props.checkmate) {
-      restart = <a href="/" className='text-white bg-[#1F1F1F] font-bold text-center items-center flex justify-center'>Play again?</a>;
+      restart = <a href="/" className="text-white bg-[#1F1F1F] font-bold text-center items-center flex justify-center">Play again?</a>;
     }
 
     return (
-      <div className='border-2'>
+      <div className="border-2">
         {displayedBoard}
         <p>{this.props.message}</p>
         {restart}
       </div>
     );
   }
-};
+}
