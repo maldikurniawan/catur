@@ -1,5 +1,7 @@
 # Chessu - Main Catur Asik Bareng Tongkrongan
 
+![Tampilan Game](https://raw.githubusercontent.com/maldikurniawan/portfolio/refs/heads/main/public/assets/chessu.png)
+
 ## Deskripsi
 
 Chessu adalah game catur berbasis web yang bikin lo bisa main catur bareng temen tongkrongan lo. Tapi inget, kalo lo ga punya tongkrongan, sorry, game ini bukan buat lo! 😜
