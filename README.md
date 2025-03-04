@@ -6,6 +6,10 @@
 
 Chessu adalah game catur berbasis web yang bikin lo bisa main catur bareng temen tongkrongan lo. Tapi inget, kalo lo ga punya tongkrongan, sorry, game ini bukan buat lo! 😜
 
+## Link Main Langsung
+
+🎮 **Main sekarang:** [Chessu di Netlify](https://chessu.netlify.app/)
+
 ## Fitur
 
 - **Duel 1v1**: Main catur bareng temen lo.
